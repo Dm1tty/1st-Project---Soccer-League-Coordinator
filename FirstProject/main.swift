@@ -147,16 +147,11 @@ for player in players {
 //CREATE AN EMPTY ARRAY FOR LETTERS
 var letters = [String]()
 
-
-
 var averageHeightOfDragons = 0.00
 var averageHeightOfSharks = 0.00
 var averageHeightOfRaptors = 0.00
 
-
-
-
-
+// GENERATE INDIVIDUAL LETTER AND ADD IT TO THE ARRAY OF LETTERS
 for dragon in teamDragons{
     
     let letter = "Dear \(dragon["guardian"]!), your child \(dragon["name"]!), is in the Dragon Team. Please show up on March 17, at 1pm for a practice. \n"
@@ -164,7 +159,7 @@ for dragon in teamDragons{
     letters.append(letter)
 }
 
-
+// GENERATE INDIVIDUAL LETTER AND ADD IT TO THE ARRAY OF LETTERS
 for shark in teamSharks{
     
     let letter = "Dear \(shark["guardian"]!), your child \(shark["name"]!), is in the Shark Team. Please show up on March 17, at 3pm for a practice. \n"
@@ -172,17 +167,19 @@ for shark in teamSharks{
     letters.append(letter)
 }
 
+// GENERATE INDIVIDUAL LETTER AND ADD IT TO THE ARRAY OF LETTERS
 for raptor in teamRaptors{
     
     let letter = "Dear \(raptor["guardian"]!), your child \(raptor["name"]!), is in the Raptor Team. Please show up on March 18, at 1pm for a practice. \n"
     averageHeightOfRaptors += Double(raptor["height"]!)!
     letters.append(letter)
 }
-
+// PRINT THE AVERAGE HEIGHT FOR EACH TEM
 print("Average height of the dragons = \(averageHeightOfDragons/Double(teamDragons.count))")
 print("Average height of the sharks = \(averageHeightOfSharks/Double(teamSharks.count))")
 print("Average height of the raptors = \(averageHeightOfRaptors/Double(teamRaptors.count))")
 
+// PRINT EACH LETTER IN THE ARRAY INDIVIDUALLY
 for letter in letters{
     print(letter)
 }
