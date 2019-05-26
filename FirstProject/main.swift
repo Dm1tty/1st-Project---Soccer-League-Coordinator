@@ -99,6 +99,8 @@ var player18 = ["name" : "Herschel Krustofski",
                 "experience": "yes",
                 "guardian" : "Hyman and Rachel Krustofski"]
 
+
+
 // CREATING AN ARRAY THAT CONTAINS ALL THE PLAYERS
 var players = [player1, player2, player3, player4, player5, player6, player7, player8, player10, player9, player11, player12, player13, player14, player15, player16, player17, player18]
 
@@ -110,20 +112,27 @@ var teamRaptors = [[String:String]]()
 // SORTING PLAYERS BY THEIR HEIGHT
 players.sort(by: {($0["height"]! as String) > $1["height"]! as String})
 
+// VARIABLES THAT HELP WITH DEBUGGING
+var nOfExperiencedPlayersInDragons = 0
+var nOfExperiencedPlayersInSharks = 0
+var nOfExperiencedPlayersInRaptors = 0
 
-// DIVIDING EXPERIENCED PLAYERS
+// DIVIDING EXPERIENCED PLAYERS, THE "IF" STATEMENT CREATED TO HELP ME WITH DEBUGGING
 for player in players {
     if player["experience"] == "yes"{
         if teamSharks.count > teamDragons.count{
             teamDragons.append(player)
+            nOfExperiencedPlayersInDragons += 1
             
         }
         else if teamDragons.count>teamRaptors.count{
             teamRaptors.append(player)
+            nOfExperiencedPlayersInRaptors += 1
             
         }
         else{
             teamSharks.append(player)
+            nOfExperiencedPlayersInSharks += 1
             
         }
     }
@@ -174,10 +183,10 @@ for raptor in teamRaptors{
     averageHeightOfRaptors += Double(raptor["height"]!)!
     letters.append(letter)
 }
-// PRINT THE AVERAGE HEIGHT FOR EACH TEM
-print("Average height of the dragons = \(averageHeightOfDragons/Double(teamDragons.count))")
-print("Average height of the sharks = \(averageHeightOfSharks/Double(teamSharks.count))")
-print("Average height of the raptors = \(averageHeightOfRaptors/Double(teamRaptors.count))")
+// PRINT THE AVERAGE HEIGHT FOR EACH TEAM AND THE NUMBER OF EXPERIENCED PLAYERS
+print("Average height of the dragons = \(averageHeightOfDragons/Double(teamDragons.count)).\n Number of experienced players = \(nOfExperiencedPlayersInDragons)")
+print("Average height of the sharks = \(averageHeightOfSharks/Double(teamSharks.count)).\n Number of experienced players = \(nOfExperiencedPlayersInSharks)")
+print("Average height of the raptors = \(averageHeightOfRaptors/Double(teamRaptors.count)).\n Number of experienced players = \(nOfExperiencedPlayersInRaptors)\n")
 
 // PRINT EACH LETTER IN THE ARRAY INDIVIDUALLY
 for letter in letters{
