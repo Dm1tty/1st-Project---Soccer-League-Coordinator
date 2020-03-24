@@ -21,5 +21,6 @@ You have volunteered to be the coordinator for your town’s youth soccer league
   - String interpolation
   - Use of comments
 
-**Received Grade: Exceeds Expectations**
+**Received Grade:**
+  - Exceeds Expectations
 
